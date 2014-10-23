@@ -1,0 +1,10 @@
+Package: crukCIMisc
+Type: Package
+Title: A package of miscellaneous functions to support R training at CRUK Cambridge Institute
+Version: 0.1
+Date: 2008-02-18
+Author: Mark Dunning, Andy Lynch
+Maintainer: Mark Dunning <Mark.Dunning@cruk.cam.ac.uk>
+Description: Various shortcuts for common plotting operations and colour palettes based on Cambridge University and Cancer Research Uk branding
+License: GPL2.0
+
