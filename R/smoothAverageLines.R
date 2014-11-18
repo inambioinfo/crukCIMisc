@@ -51,7 +51,7 @@ smoothAverageLines <- function(data, Group, xCol =1, average="mean",spread="sd",
     if(spread == "95CI") vars <- 1.96 *(vars/sqrt(nobs))
     
     
-    arrows(xs, aveVals-vars, xs, aveVals+vars, code=3, angle=90,col=col[i])
+    arrows(xs, aveVals-vars, xs, aveVals+vars, code=3, angle=90)
     
   }
   
