@@ -13,7 +13,7 @@ CRUKcol(col = "Blue", tint = 0)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{col}{ should be one of "Blue", "Magenta","Teal","Green","Orange","Yellow","Purple","Pink","LightBlue" or "Turquoise". }
-  \item{tint}{ should be 0 (default) for saturated colour, 1 for 10% tint, 2 for 20% tint}
+  \item{tint}{ should be 0 (default) for saturated colour, 1 for 10\% tint, 2 for 20\% tint}
 }
 \references{ www.cancerresearchuk.org/branding/images/pdfs/guidelines }
 \author{ Andy Lynch }

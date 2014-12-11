@@ -15,10 +15,7 @@ Returns the value associated with the colour for use with col=XXXX statements.
 }
 \references{ http://www.cam.ac.uk/cambuniv/style/five.html }
 \author{ Andy Lynch }
-\note{ ~~further notes~~ 
 
- ~Make other sections like Warning with \section{Warning }{....} ~
-}
 \seealso{ \code{\link{CRUKcol}}}
 \examples{
 plot(rnorm(500),rnorm(500),pch=15,col=Camcol("LightBlue"))}
