@@ -2,10 +2,10 @@
 \alias{prismDoseResponse}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  Create a dose reponse plot similar to those produced by GraphPad Prism.
+  Create a dose response plot similar to those produced by GraphPad Prism.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+ Our attempt to create a dose response plot that looks similar to those produced by GraphPad Prism.
 }
 \usage{
   prismTimeSeries(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL)
@@ -35,7 +35,7 @@
   }
 }
 \details{
-This plot is based heavily on the drc package.
+This plot is based heavily on the drc package.  If it doesn't look how you'd hope and the options to alter the plot in the way you'd like are not available, then consider using that package directly as it has many more options than you can currently access here.
 }
 \value{
 %%  ~Describe the value returned
