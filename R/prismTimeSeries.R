@@ -25,7 +25,8 @@ prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd 
   errorLimits <- switch(errorBars,
                         std.dev = lapply(treatmentList, std.dev),
                         std.errors = lapply(treatmentList, std.errors),
-                        conf.intervals = lapply(treatmentList, conf.intervals))
+                        conf.intervals = lapply(treatmentList, conf.intervals),
+                        none = lapply(treatmentList, function(x) { rep(0, nrow(x)) }))
   errorLimits <- do.call("rbind", errorLimits)
   
   ## define the plotting limits
@@ -39,7 +40,7 @@ prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd 
     } else {
       points(time, meanPoints[i,], col = col[i], pch = 14 + i, cex = 1.5)
     }
-    lines(x = time, y = points[i,], lwd = lwd, col = col[i])
+    lines(x = time, y = meanPoints[i,], lwd = lwd, col = col[i])
     arrows(time, meanPoints[i,] - errorLimits[i,], time, meanPoints[i,] + errorLimits[i,], angle = 90, code = 3, length = 0.1, lwd = lwd, col = col[i])
   }
   

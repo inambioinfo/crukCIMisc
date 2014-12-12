@@ -1,7 +1,7 @@
 Package: crukCIMisc
 Type: Package
 Title: A package of miscellaneous functions to support R training at CRUK Cambridge Institute
-Version: 0.2
+Version: 0.2.2
 Date: 2014-12-10
 Author: Mark Dunning, Mike Smith, Andy Lynch
 Maintainer: Mark Dunning <Mark.Dunning@cruk.cam.ac.uk>
