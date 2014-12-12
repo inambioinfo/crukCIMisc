@@ -1,4 +1,10 @@
-prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL) {
+prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL) {
+  
+  ## define the plotting colours if needed
+  if(is.null(col)) {
+    col <- brewer.pal(max(nTreatments, 3), "Set1")
+  }
+  
   ##remove empty rows and columns
   tab <- tab[rowSums(is.na(tab)) != ncol(tab)]
   tab <- tab[colSums(is.na(tab)) != nrow(tab)]
@@ -26,17 +32,16 @@ prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd 
   upper <- max(meanPoints + errorLimits, na.rm = TRUE)
   
   for(i in seq_along(unique(treatmentVector))) {
-    colour <- rainbow(length(treatmentList))[i]
     if(i == 1) {
-      plot(time, meanPoints[i,], col = colour, ylim = c(0, upper+0.04*upper), xlim = c(0, max(time)+2), axes = FALSE, xaxs = "i", yaxs = "i", pch = 14 + i, cex = 1.5, xlab = xlab, ylab = ylab)
+      plot(time, meanPoints[i,], col = col[i], ylim = c(0, upper+0.04*upper), xlim = c(0, max(time)+2), axes = FALSE, xaxs = "i", yaxs = "i", pch = 14 + i, cex = 1.5, xlab = xlab, ylab = ylab)
       axis(side = 1, lwd = 3)
       axis(side = 2, lwd = 3, las = 1)
     } else {
-      points(time, meanPoints[i,], col = colour, pch = 14 + i, cex = 1.5)
+      points(time, meanPoints[i,], col = col[i], pch = 14 + i, cex = 1.5)
     }
-    lines(x = time, y = points[i,], lwd = lwd, col = colour)
-    arrows(time, meanPoints[i,] - errorLimits[i,], time, meanPoints[i,] + errorLimits[i,], angle = 90, code = 3, length = 0.1, lwd = lwd, col = colour)
+    lines(x = time, y = points[i,], lwd = lwd, col = col[i])
+    arrows(time, meanPoints[i,] - errorLimits[i,], time, meanPoints[i,] + errorLimits[i,], angle = 90, code = 3, length = 0.1, lwd = lwd, col = col[i])
   }
   
-  legend(x = "topright", legend = names(treatmentList), pch = 14+seq_along(unique(treatmentVector)), col = rainbow(length(treatmentList)), box.lwd = 0, pt.cex = 1.5)
+  legend(x = "topright", legend = names(treatmentList), pch = 14+seq_along(unique(treatmentVector)), col = col, box.lwd = 0, pt.cex = 1.5)
 }

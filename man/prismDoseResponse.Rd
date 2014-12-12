@@ -8,7 +8,7 @@
  Our attempt to create a dose response plot that looks similar to those produced by GraphPad Prism.
 }
 \usage{
-  prismTimeSeries(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL)
+  prismDoseResponse(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
