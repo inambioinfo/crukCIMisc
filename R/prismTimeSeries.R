@@ -1,4 +1,4 @@
-prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL) {
+prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, main = "", col = NULL) {
   
   ## define the plotting colours if needed
   if(is.null(col)) {
@@ -33,7 +33,7 @@ prismTimeSeries <- function(tab, nTreatments = 3, errorBars = "std.errors", lwd 
   
   for(i in seq_along(unique(treatmentVector))) {
     if(i == 1) {
-      plot(time, meanPoints[i,], col = col[i], ylim = c(0, upper+0.04*upper), xlim = c(0, max(time)+2), axes = FALSE, xaxs = "i", yaxs = "i", pch = 14 + i, cex = 1.5, xlab = xlab, ylab = ylab)
+      plot(time, meanPoints[i,], col = col[i], ylim = c(0, upper+0.04*upper), xlim = c(0, max(time)+2), axes = FALSE, xaxs = "i", yaxs = "i", pch = 14 + i, cex = 1.5, xlab = xlab, ylab = ylab, main = main)
       axis(side = 1, lwd = 3)
       axis(side = 2, lwd = 3, las = 1)
     } else {

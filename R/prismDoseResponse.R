@@ -1,4 +1,4 @@
-prismDoseResponse <- function(tab, nTreatments = 2, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL) {
+prismDoseResponse <- function(tab, nTreatments = 2, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, main = "", col = NULL) {
   
   if(is.null(col)) {
     col <- brewer.pal(max(nTreatments, 3), "Set1")
@@ -28,7 +28,7 @@ prismDoseResponse <- function(tab, nTreatments = 2, errorBars = "std.errors", lw
   errorLimits <- do.call("rbind", errorLimits)
   
   doseModel <- drm(value~X, names(treatmentList)[treatmentVector.2], fct=L.4(), data = tab.2)
-  plot(doseModel, col = col, lwd = 3, bty = "l", xlab = xlab, ylab = ylab)
+  plot(doseModel, col = col, lwd = 3, bty = "l", xlab = xlab, ylab = ylab, main = main)
   
   ## we cant plot error bars with no length
   for(i in seq_along(unique(treatmentVector))) {
