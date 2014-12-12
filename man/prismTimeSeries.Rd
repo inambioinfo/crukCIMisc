@@ -5,10 +5,14 @@
   Create a time series plot similar to those produced by GraphPad Prism.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+ Our attempt to create a time series plot that looks similar to those produced by 
+ GraphPad Prism.  The intention is to reproduce plots as closely as possible, without
+ overwhelming the user with possible plotting options. If you find fuctionality you'd like
+ to be added please contact the package authors. 
 }
 \usage{
-  prismTimeSeries(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL)
+  prismTimeSeries(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, 
+                  ylab = NULL, xlab = NULL, main = "", col = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -30,23 +34,17 @@
   \item{xlab}{
     Label for the x axis.
   }
+  \item{main}{
+    Title for the plot.
+  }
   \item{col}{
     Specify colours for the curves and points.
   }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
+
 
 \author{
-Mike L. Smith
+Mike L. Smith, Mark Dunning
 }
 
 

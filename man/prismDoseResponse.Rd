@@ -5,10 +5,14 @@
   Create a dose response plot similar to those produced by GraphPad Prism.
 }
 \description{
- Our attempt to create a dose response plot that looks similar to those produced by GraphPad Prism.
+ Our attempt to create a dose response plot that looks similar to those produced by 
+ GraphPad Prism. The intention is to reproduce plots as closely as possible, without
+ overwhelming the user with possible plotting options. If you find fuctionality you'd like
+ to be added please contact the package authors. 
 }
 \usage{
-  prismDoseResponse(tab, nTreatments = 3, errorBars = "std.errors", lwd = 3, ylab = NULL, xlab = NULL, col = NULL)
+  prismDoseResponse(tab, nTreatments = 2, errorBars = "std.errors", lwd = 3, 
+                    ylab = NULL, xlab = NULL, main = "", col = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,6 +33,9 @@
   }
   \item{xlab}{
     Label for the x axis.
+  }
+  \item{main}{
+    Title for the plot.
   }
   \item{col}{
     Specify colours for the curves and points.
